@@ -3,6 +3,14 @@ name = "randyx"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "randyx"
+path =  "os/main.rs"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort" 
 
 [dependencies]
