@@ -1,5 +1,5 @@
 # randyx
-OS kernel implemented in Rust
+### OS kernel implemented in Rust
 
     Copyright (C) 2023  Andrii Kushyk
 
