@@ -1,6 +1,9 @@
 # randyx
 ### OS kernel implemented in Rust
 
+![circle_logo](https://github.com/git-user-cpp/randyx/assets/61907955/cb4335d0-abcc-4350-9a2c-5303cda791d4)
+
+
     Copyright (C) 2023  Andrii Kushyk
 
     This program is free software; you can redistribute it and/or modify
