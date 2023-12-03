@@ -18,14 +18,20 @@
 #![no_std]
 #![no_main]
 
+mod kernel;
+
 use core::panic::PanicInfo;
+use crate::kernel::core::vga_output::vga_output_message;
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
     loop{}
 }
 
+static HELLO: &[u8] = b"RandyX is running...";
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
+    vga_output_message(HELLO);
+
     loop{}
 }
