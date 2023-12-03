@@ -18,24 +18,20 @@
 #![no_std]
 #![no_main]
 
+mod kernel;
+
 use core::panic::PanicInfo;
+use crate::kernel::core::vga_output::vga_output_message;
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
     loop{}
 }
 
-static HELLO: &[u8] = b"Hello RandyX!";
+static HELLO: &[u8] = b"RandyX is running...";
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    let vga_buffer = 0xb8000 as *mut u8;
-
-    for(i, &byte) in HELLO.iter().enumerate(){
-        unsafe {
-            *vga_buffer.offset(i as isize * 2) = byte;
-            *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
-        }
-    }
+    vga_output_message(HELLO);
 
     loop{}
 }
