@@ -1,3 +1,4 @@
+/// function for outputting text information via VGA
 pub fn vga_output_message(_message: &[u8]) {
     const MAX_LEN: usize = 32;
     let mut message = _message;
