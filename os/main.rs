@@ -28,10 +28,10 @@ fn panic(_info: &PanicInfo) -> ! {
     loop{}
 }
 
-static HELLO: &[u8] = b"RandyX is running...";
+static RUNNING_MSG: &[u8] = b"RandyX is running...";
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    vga_output_message(HELLO);
+    vga_output_message(RUNNING_MSG);
 
     loop{}
 }
